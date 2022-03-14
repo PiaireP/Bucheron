@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/css/style.css</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/index.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/include/getNom.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/include/getSecteur.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/bdd/NomSQL.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/bdd/BucheronSQL.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/affectation.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/include/chargementClasses.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/js/main.js</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/include/getBucheron.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/include/gestionDate.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/metier/Bucheron.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/bdd/SecteurSQL.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/include/getArbre.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/bdd/ArbreSQL.php</file>
+            <file>file:/home/pierre.perdigues/PHPProjects/Bucheron/bdd/Connexion.php</file>
+        </group>
+    </open-files>
+</project-private>
