@@ -32,6 +32,17 @@ var verrif = 0;
 //Initalisé a 1 si jamais l'alert pour prevenir d'un probleme de date s'active
 var alertActive = 0;
 document.getElementById('selectD').onchange = function () {
+    today = new Date();
+    var mois = today.getMonth() + 1;
+    var jour = today.getDate();
+    if(mois < 10) {
+        mois = "0"+mois;
+    }
+    if (jour < 10) {
+        jour = "0"+jour;
+    }
+    console.log(today.getFullYear()+"-"+mois+"-"+jour);
+    console.log(document.getElementById('selectD').value)
     //Cette fonction est appellé si jamais pendant la selection, l'utilisateur décide de changer la date
     remiseZeroCoche()
     //Recupération de la date choisi
@@ -83,6 +94,13 @@ function cliqueBucheron() {
             //Si jamais pas déjà afficher appel la fonction suivante et initialise la varibale de verrification
             getSecteur();
             callBucheron = 1;
+        }
+        table = zTableTotal.childNodes[1].childNodes;
+        for (i = 0; i < table.length; i++) {
+            if(table[i].className == "selectionnerArbre") {
+                table[i].classList.remove("selectionnerArbre");
+                table[i].classList.add("ligne");
+            }
         }
     }
 }
@@ -414,7 +432,7 @@ function afficheArbre(listA) {
         var longitude = listA.lesArbres[i].longitude;
         var stade = listA.lesArbres[i].stadeDeveloppement;
         //ajout du code HTML pour afficher les bucherons dans le select
-        options += "<tr> <td><input type='checkbox' class='checkTableau' id='check" + id + "'></td> <td>" + id + "</td><td>" + hauteur + "</td><td>" + circonference + "</td><td>" + latitude + "</td><td>" + longitude + "</td><td>" + stade + "</td> </tr>";
+        options += "<tr class='ligne'> <td><input type='checkbox' class='checkTableau' id='check" + id + "'></td> <td>" + id + "</td><td>" + hauteur + "</td><td>" + circonference + "</td><td>" + latitude + "</td><td>" + longitude + "</td><td>" + stade + "</td> </tr>";
     }
     //Insertion de la variable dans le html
     zTableTotal.innerHTML = entete + options;
@@ -574,10 +592,13 @@ function verrficationNbArbreCoche() {
 
 //Fonction pour crée un message pour prevenir que la date selectionner n'est pas valide et donc empecher l'envoie des informations
 function createMsg() {
-    var h = document.createElement("h3");
-    h.id = "titreOverDate";
-    h.appendChild(document.createTextNode("SELECTIONNER UNE DATE VALIDE"))
-    document.getElementById("formAffect").appendChild(h);
+    console.log("titreOverDate")
+    if (document.getElementById("titreOverDate") != null) {
+        var h = document.createElement("h3");
+        h.id = "titreOverDate";
+        h.appendChild(document.createTextNode("SELECTIONNER UNE DATE VALIDE"))
+        document.getElementById("formAffect").appendChild(h);
+    }
 }
 
 //Fonction pour crée un paragraphe informant que l'utilisateur doit selectionner entre 10 et 16 arbre
@@ -639,12 +660,14 @@ function historiqueCoche(check, passage) {
     //La variable passage défini si la checkbox a était coché ou décoché
     if (passage == 1) {
         historique.push(check.id);
+        check.parentNode.parentNode.classList.remove("ligne");
         check.parentNode.parentNode.classList.add("selectionnerArbre");
     }
     if (passage == 0) {
         var position = historique.indexOf(check);
         historique.splice(position, 1);
         check.parentNode.parentNode.classList.remove("selectionnerArbre");
+        check.parentNode.parentNode.classList.add("ligne");
     }
 }
 

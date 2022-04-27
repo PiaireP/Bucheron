@@ -22,9 +22,13 @@ class ArbreSQL {
         return $tabArbre;
     }
 
-    //Requette SQL pour recupere les arbres qui ont une intervention en cours en fonction id du nom de l'epspce, de l'adresse et la date choisi
+    //Requette SQL pour recupere les arbres qui ont une intervention en cours en fonction id du nom de l'espece, de l'adresse et la date choisi
     function readSelArbreInterv($idName, $idAddr, $dateSelect) {
-        $stmt = $this->_laConnexion->dbh()->prepare("SELECT id, circonferenceEnCm, hauteurEnM, latitude, longitude, stadeDeveloppement FROM arbre INNER JOIN arbreinterv ON arbre.id = arbreinterv.idAbreAI WHERE idNom=:nom AND idAdresse=:adresse AND arbreinterv.dateArbreInterv BETWEEN :dateSelect AND :dateSelect;");
+        $stmt = $this->_laConnexion->dbh()->prepare("SELECT id, circonferenceEnCm, hauteurEnM, latitude, longitude, stadeDeveloppement FROM 
+        arbre INNER JOIN intervention ON arbre.id = intervention.idArbre
+         WHERE intervention.idNom=:nom 
+         AND adresseArbre=:adresse 
+         AND intervention.dateInterv=:dateSelect;");
         $stmt->bindValue(':nom', $idName);
         $stmt->bindValue(':adresse', $idAddr);
         $stmt->bindValue(':dateSelect', $dateSelect);

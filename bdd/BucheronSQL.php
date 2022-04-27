@@ -23,8 +23,8 @@ class BucheronSQL {
 
     //Requette SQL qui recupere tous les bucherons qui ont une intervention a la date passer en parametre
     function readBucheronDate($dInterv) {
-        $stmt = $this->_laConnexion->dbh()->prepare("SELECT id, nom, prenom FROM bucheron INNER JOIN binterv ON bucheron.id = binterv.idBucheronIntervention 
-        WHERE binterv.dateBuchInterv BETWEEN :dInterv AND :dInterv");
+        $stmt = $this->_laConnexion->dbh()->prepare("SELECT id, nom, prenom FROM bucheron INNER JOIN intervention ON bucheron.id = intervention.idBucheron 
+        WHERE intervention.dateInterv=:dInterv");
         $stmt->bindValue(':dInterv', $dInterv);
         $valid = $stmt->execute();
         if (!$valid) {

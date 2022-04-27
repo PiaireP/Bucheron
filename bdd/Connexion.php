@@ -13,9 +13,9 @@ class Connexion {
      */    
     public function __construct(){
         // Définition des variables de connexion
-        $user = "adminbdarbre";
-        $pass = "mdpbdarbre";
-        $dsn ='mysql:host=localhost;dbname=bdarbre'; //Data Source Name
+        $user = "id18833180_pierrep";
+        $pass = "H5riss0?/BDDbucheron";
+        $dsn ='mysql:host=localhost;dbname=id18833180_bdarbre'; //Data Source Name
 
         // Connexion 
         try {

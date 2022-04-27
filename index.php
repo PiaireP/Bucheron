@@ -9,76 +9,44 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css" href="css/style.css" />
-
-        <style>
-      body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-      h2 {
-        font-size: 20px;
-        color: #000000;
-      }
-      #example {
-        visibility: hidden;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        z-index: 1000;
-      }
-      #example div {
-        width: 350px;
-        height: 80px;
-        margin: 100px auto;
-        background-color: #f2f2f2;
-        border-radius: 10px;
-        -webkit-border-radius: 10px;
-        -moz-border-radius: 10px;
-        padding: 15px;
-        text-align: center;
-        font-weight: bold;
-        font-size: 15px;
-        border: 3px solid #cccccc;
-        position: absolute;
-        left: 50%;
-        top: 100px;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        -webkit-transform: translate(-50%, -50%);
-      }
-    </style>
-
     </head>
     <body>
-        <h1>Accueil</h1>
-        <button>Affectation</button>
+        <div id="bande">
+            <img src="res/ONF_logo.png"/>
+        <h1>Affectation</h1>
+        </div>
+        <form id="formAffect">
+        <div id="choixArbre">
+                <table id="tableArbre">
+                <tbody> 
+                </tbody>
+                </table>
+            </div>
+            <div id="divCalendar">
+                <input type="date" id="selectD">
+            </div>
+            <div id="divBucheron">
+                <select name="selectBuch" id="selectBuch" size="15">
+                </select>
+            </div>
 
-        <h2>Créer Boîte Modale</h2>
-    <a href="#" onclick="example()">ouvrir</a>
-    <div id="example">
-      <div>
-        <p>Le contenu que vous souhaitez voir voir va ici.</p>
-        <a href="#" onclick="example()">Cliquez ici pour fermer la boîte</a>
-        <script>
-        function example() {
-          el = document.getElementById("example");
-          el.style.visibility = el.style.visibility == "visible" ? "hidden" : "visible";
-        }
-      </script>
-      </div>
-    </div>
+            <div name="divSecteur" id="divSecteur">
+                <select name="selectSecteur" id="selectSecteur" size="15">
+                </select>
+            </div>
+
+            <div name="divEspece" id="divEspece">
+                <table sizeof=20>
+                    <tr>
+                        <td><input type="text" id="choixEspece"></td>
+                    </tr>
+                    <tr>
+                        <td><select id="selectEspece" id="selectEspece" size="10" style="width: 200px"></select></td>
+                    </tr>
+                </table>
+            </div>
+        </form>
     </body>
-    <script>
-        var tableDonne = [];
 
-        document.querySelector('button').onclick = function () {
-            window.location.href = "affectation.php";
-        }
-
-    </script>
+    <script src="js/main.js"></script>
 </html>

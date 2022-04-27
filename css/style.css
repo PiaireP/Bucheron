@@ -170,3 +170,7 @@ th {
 #tableArbre td {
     border: gray solid 1px;
 }
+
+.ligne {
+    background-color: white;
+}
